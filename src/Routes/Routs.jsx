@@ -6,11 +6,13 @@ import Home from "../page/Home";
 import AddJobs from "../page/AddJobs";
 import PrivateRoute from "./PrivateRoute";
 import ViewDetail from "../page/ViewDetail";
+import ErrorPage from "../page/ErrorPage";
 
 const Routs =createBrowserRouter([
     {
         path:"/",
         element:<Router></Router>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:"/",
