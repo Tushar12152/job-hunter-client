@@ -6,7 +6,7 @@ const PrivateRoute = ({children}) => {
 const {loading,user}=useAuth()
 
 if(loading){
-    return  <div>
+    return  <div className="flex flex-col gap-2 items-center justify-center mt-40">
          <progress className="progress progress-accent w-56" value={0} max="100"></progress>
 <progress className="progress progress-accent w-56" value="10" max="100"></progress>
 <progress className="progress progress-accent w-56" value="40" max="100"></progress>

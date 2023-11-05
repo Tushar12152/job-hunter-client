@@ -2,7 +2,7 @@
 
 const Banner = () => {
     return (
-        <div className="bg-[url('https://i.ibb.co/4tkxm6g/Banner.jpg')] max-w-full h-screen bg-no-repeat rounded-lg bg-cover  opacity-70">
+        <div className="bg-[url('https://i.ibb.co/4tkxm6g/Banner.jpg')] max-w-full h-screen bg-no-repeat rounded-lg bg-cover relative  opacity-70">
             
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                  <h1 className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent text-2xl lg:text-5xl font-semibold lg:font-bold animate__animated animate__fadeIn animate__delay-2s">Find Your Dream Job Here</h1>

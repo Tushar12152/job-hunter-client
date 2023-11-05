@@ -1,10 +1,14 @@
+import axios from "axios";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import useAuth from "../Hooks/useAuth";
+import swal from "sweetalert";
 
 const AddJobs = () => {
     const [startDate, setStartDate] = useState(new Date());
-
+    const{user}=useAuth()
+   
     const [selectedOption, setSelectedOption] = useState('');
 
     const handleSelectChange = (e) => {
@@ -24,12 +28,25 @@ const AddJobs = () => {
         const postDate=form.date.value;
         const deadLine=startDate;
         const applicants=form.applicant.value;
+        const title=form.title.value;
 
         const job={
-            photo,UserName,category,deadLine,salary,description,postDate,applicants
+            photo,title,UserName,category,deadLine,salary,description,postDate,applicants
         }
 
-        console.log(job);
+        // console.log(job);
+
+      axios.post("http://localhost:5002/jobs",job)
+      .then(res=>{
+        // console.log(res.data);
+        if(res.data.insertedId){
+            swal('Your Job is Successfully added')
+        }
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+
     }
 
   return (
@@ -49,7 +66,7 @@ const AddJobs = () => {
                 <label className="label">
                   <span className="label-text">User Name</span>
                 </label>
-                <input name="name" type="text" placeholder="User Name" className="input input-bordered input-primary w-full" required />
+                <input defaultValue={user?.displayName} name="name" type="text" placeholder="User Name" className="input input-bordered input-primary w-full" required />
               </div>
 
           </div>
@@ -122,6 +139,13 @@ const AddJobs = () => {
                  </div>
    
              </div>
+
+             <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text">Job Title</span>
+                </label>
+                <input name="title" type="text" placeholder="Job Title" className="input input-bordered input-primary w-full " required />
+              </div>
 
              <input className="btn w-full mt-5 bg-gradient-to-r from-red-500 to-blue-500" type="submit" value="Add Job" />
         </form>
