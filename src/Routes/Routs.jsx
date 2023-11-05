@@ -5,6 +5,7 @@ import Register from "../page/Register";
 import Home from "../page/Home";
 import AddJobs from "../page/AddJobs";
 import PrivateRoute from "./PrivateRoute";
+import ViewDetail from "../page/ViewDetail";
 
 const Routs =createBrowserRouter([
     {
@@ -28,6 +29,13 @@ const Routs =createBrowserRouter([
                 element:<PrivateRoute>
                     <AddJobs></AddJobs>
                          </PrivateRoute>
+            },
+            {
+                path:"/detail/:id",
+                element:<PrivateRoute>
+                     <ViewDetail></ViewDetail>
+                </PrivateRoute>,
+                // loader:({params})=>fetch()
             }
             
         ]
