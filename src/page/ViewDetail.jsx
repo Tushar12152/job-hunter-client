@@ -7,8 +7,8 @@ const ViewDetail = () => {
     return (
         <div className="w-[95%] mx-auto mt-10">
              <div className="card lg:card-side bg-base-100 shadow-2xl w-[80%] mx-auto ">
-  <figure className="w-[50%]"><img className="w-full p-5" src={photo} alt="Album"/></figure>
-  <div className="card-body w-[50%]">
+  <figure className="lg:w-[50%]"><img className="w-full p-5" src={photo} alt="Album"/></figure>
+  <div className="card-body lg:w-[50%]">
     <h2 className="card-title">{title}</h2>
     <p>{description}</p>
     <p className="font-semibold">Posted: {UserName}</p>

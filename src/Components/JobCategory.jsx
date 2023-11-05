@@ -23,13 +23,13 @@ const JobCategory = () => {
     return <div className='text-center mt-20'><span className="loading loading-spinner text-success"></span></div>;
   }
 
-  const onSite = jobs.filter(job =>job.category.toLowerCase()==='on site job');
+  const onSite = jobs?.filter(job =>job?.category.toLowerCase()==='on site job');
 //   console.log(onSite);
-  const remoteJobs = jobs.filter(job => job.category.toLowerCase() === 'remote job');
+  const remoteJobs = jobs?.filter(job => job?.category.toLowerCase() === 'remote job');
 //   console.log(remoteJobs);
-  const hybridJobs = jobs.filter(job => job.category.toLowerCase() === 'hybrid');
+  const hybridJobs = jobs?.filter(job => job?.category.toLowerCase() === 'hybrid');
 //   console.log(hybridJobs);
-  const partTimeJobs = jobs.filter(job => job.category.toLowerCase() === 'part time');
+  const partTimeJobs = jobs?.filter(job => job?.category.toLowerCase() === 'part time');
 //   console.log(partTimeJobs);
 
   const handleTabSelect = (index) => {

@@ -8,7 +8,7 @@ import swal from "sweetalert";
 
 const Login = () => {
    const [showPassword,setShowPassword]=useState(true)
-   const{googleSignUp}=useAuth()
+   const{googleSignUp,login}=useAuth()
    const navigate=useNavigate()
 
    const popUp=()=>{
@@ -27,7 +27,15 @@ const Login = () => {
     const form=e.target;
     const email=form.email.value;
     const password=form.password.value;
-    console.log(email,password);
+    // console.log(email,password);
+    login(email,password)
+    .then(()=>{
+      swal('You are successfully signed up')
+      navigate("/")
+    })
+    .catch(err=>{
+      swal(err.message)
+   })
  }
 
 

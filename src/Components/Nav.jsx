@@ -1,11 +1,26 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import swal from "sweetalert";
+import { useQuery } from "@tanstack/react-query";
 
 const Nav = () => {
 
+  const {data } = useQuery({
+    queryKey: ['Data'],
+    queryFn: () =>
+      fetch('http://localhost:5002/users').then(
+        (res) => res.json(),
+      ),
+  })
+
+  // console.log(data);
     const {logOut,user}=useAuth()
-    //  console.log(user);
+    //  console.log(user.email);
+
+    const profile= data?.find(item=>item?.email===user?.email)
+    // const{name,photo}=profile;
+
+    // console.log(profile);
 
      const signOut=()=>{
         logOut()
@@ -67,6 +82,7 @@ const navLink=<div className="flex gap-6">
   </div>
   <div className="navbar-end">
     {
+        user?.photoURL?
         user&& <div className="flex gap-2 ">
              <div className="flex gap-2 items-center ">
              
@@ -74,8 +90,25 @@ const navLink=<div className="flex gap-6">
              <img className="w-12 rounded-full" src={user?.photoURL} alt="" />
              </div>
              <Link to="/login">
-             <button onClick={signOut} className="btn bg-gradient-to-r from-red-500 to-blue-500">Log Out</button>
+             {
+              user&&  <button onClick={signOut} className="btn bg-gradient-to-r from-red-500 to-blue-500">Log Out</button>
+            }
              </Link>
+        </div>
+        :
+        <div>
+              <div className="flex gap-2 ">
+             <div className="flex gap-2 items-center ">
+             
+             <p className="bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent">{profile?.name}</p>
+             <img className="w-12 rounded-full" src={profile?.photo} alt="" />
+             </div>
+             <Link to="/login">
+            {
+              user&&  <button onClick={signOut} className="btn bg-gradient-to-r from-red-500 to-blue-500">Log Out</button>
+            }
+             </Link>
+        </div>
         </div>
     }
   </div>

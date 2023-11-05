@@ -3,6 +3,7 @@ import { AiFillEyeInvisible,AiFillEye } from 'react-icons/ai';
 import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import swal from "sweetalert";
+import axios from "axios";
 
 
 const Register = () => {
@@ -17,11 +18,23 @@ const Register = () => {
     const photo=form.photo.value;
     const email=form.email.value;
     const password=form.password.value;
-    console.log(name,photo,email,password);
+    // console.log(name,photo,email,password);
+    const user={name,photo,email}
     createUser(email,password)
-    .then(res=>{
-        console.log(res?.user);
-        swal("success","Your Ragistration is successfully compleate", "success")
+    .then(()=>{
+        
+      
+
+        axios.post('http://localhost:5002/users',user)
+        .then(res=>{
+          // console.log(res.data);
+          if(res.data.insertedId){
+            swal("success","Your Ragistration is successfully compleate", "success")
+          }
+        })
+        .catch(err=>{
+          console.log(err);
+        })
 
     })
     .catch(err=>{
