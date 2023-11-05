@@ -1,5 +1,5 @@
 import Banner from "../Components/Banner";
-import Footer from "../Components/Footer";
+
 import JobCategory from "../Components/JobCategory";
 
 const Home = () => {
@@ -8,7 +8,9 @@ const Home = () => {
             <Banner></Banner>
             <JobCategory></JobCategory>
 
-            <Footer></Footer>
+            <h1 className='bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent text-2xl lg:text-5xl font-semibold lg:font-bold text-center pt-20 pb-10'>.....</h1>
+
+        
         </div>
     );
 };

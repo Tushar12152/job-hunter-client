@@ -5,7 +5,7 @@ import Footer from '../Components/Footer';
 const Router = () => {
     return (
         <div >
-             <div className='h-screen'>
+             <div className='min-h-screen'>
              <Nav></Nav>
              <Outlet></Outlet>
              </div>

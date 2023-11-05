@@ -7,6 +7,7 @@ import AddJobs from "../page/AddJobs";
 import PrivateRoute from "./PrivateRoute";
 import ViewDetail from "../page/ViewDetail";
 import ErrorPage from "../page/ErrorPage";
+import AllJobs from "../Components/AllJobs";
 
 const Routs =createBrowserRouter([
     {
@@ -38,6 +39,12 @@ const Routs =createBrowserRouter([
                      <ViewDetail></ViewDetail>
                 </PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5002/jobs/${params.id}`)
+            },
+            {
+                path:'/all-jobs',
+                element:<PrivateRoute>
+                           <AllJobs></AllJobs>
+                         </PrivateRoute>
             }
             
         ]
