@@ -35,7 +35,7 @@ const Routs =createBrowserRouter([
                 element:<PrivateRoute>
                      <ViewDetail></ViewDetail>
                 </PrivateRoute>,
-                // loader:({params})=>fetch()
+                loader:({params})=>fetch(`http://localhost:5002/jobs/${params.id}`)
             }
             
         ]
