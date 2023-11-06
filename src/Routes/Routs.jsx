@@ -11,12 +11,13 @@ import AllJobs from "../Components/AllJobs";
 import Blog from "../page/Blog";
 import Apply from "./Apply";
 import MyJobs from "../page/MyJobs";
+import UpdateJob from "../page/UpdateJob";
 
 const Routs =createBrowserRouter([
     {
         path:"/",
         element:<Router></Router>,
-        errorElement:<ErrorPage></ErrorPage>,
+        // errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:"/",
@@ -60,7 +61,16 @@ const Routs =createBrowserRouter([
             },
             {
                 path:"/my-jobs",
-                element:<MyJobs></MyJobs>
+                element:<PrivateRoute>
+                    <MyJobs></MyJobs>
+                     </PrivateRoute>
+            },
+            {
+                path:"/update/:id",
+                element:<PrivateRoute>
+                    <UpdateJob></UpdateJob>
+                </PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5002/jobs/${params.id}`)
             }
             
         ]
