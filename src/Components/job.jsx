@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Job = ({job}) => {
-    const{ _id,applicants, deadLine, photo, postDate, salary, title}=job
+    const{ _id,applicants,category, deadLine, photo, postDate, salary, title}=job
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -12,6 +12,7 @@ const Job = ({job}) => {
     <h2 className="card-title">{title}</h2>
     <p>Post Date : {postDate}</p>
     <p>Deadline : {deadLine}</p>
+    <p>Category:{category}</p>
     <p>Salary : {salary} Taka</p>
     <p>Applicant : {applicants}</p>
     <div className="card-actions justify-end">

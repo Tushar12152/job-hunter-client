@@ -1,9 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 const ViewDetail = () => {
     const job=useLoaderData()
-    const{_id,UserName, deadLine,description , photo, postDate, salary, title}=job
-    // console.log(job);
+    const{_id,UserName,email, deadLine,description , photo, postDate, salary, title}=job;
+    const {user}=useAuth()
+    const loggedEmail=user?.email;
+    console.log(loggedEmail);
+    console.log(email);
+
+
+    const canApply = loggedEmail !== email;
+    const isDeadlineExpired = new Date(deadLine) < new Date();
+
     return (
         <div className="w-[95%] mx-auto mt-10">
              <div className="card lg:card-side bg-base-100 shadow-2xl w-[80%] mx-auto ">
@@ -16,9 +25,24 @@ const ViewDetail = () => {
     <p>Posted Date: {postDate}</p>
     <p>Salary: {salary} Taka</p>
     <div className="card-actions justify-end">
-     <Link to={`/apply/${_id}`}>
-     <button className="btn bg-gradient-to-r from-red-500 to-blue-500">Apply now</button>
-     </Link>
+  
+
+
+                        {!isDeadlineExpired && canApply && (
+                            <Link to={`/apply/${_id}`}>
+                                <button className="btn bg-gradient-to-r from-red-500 to-blue-500">Apply now</button>
+                            </Link>
+                        )}
+                        {isDeadlineExpired && (
+                            <div className="text-red-500 font-bold">Application deadline has passed</div>
+                        )}
+                        {!canApply && (
+                            <div className="text-red-500 font-bold">You cannot apply to your own job posting</div>
+                        )}
+
+
+
+
     </div>
   </div>
 </div>

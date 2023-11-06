@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 
 const TotalApply = ({apply})=> {
-    console.log(apply);
+    // console.log(apply);
 
     const{UserName,  category, email, photo,title}=apply
     return (
