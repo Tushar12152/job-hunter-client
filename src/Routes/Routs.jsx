@@ -9,6 +9,7 @@ import ViewDetail from "../page/ViewDetail";
 import ErrorPage from "../page/ErrorPage";
 import AllJobs from "../Components/AllJobs";
 import Blog from "../page/Blog";
+import Apply from "./Apply";
 
 const Routs =createBrowserRouter([
     {
@@ -49,6 +50,12 @@ const Routs =createBrowserRouter([
             {
                 path:"/blog",
                 element:<Blog></Blog>
+            },
+            {
+                path:"/apply",
+                element:<PrivateRoute>
+                         <Apply></Apply>
+                        </PrivateRoute>
             }
             
         ]

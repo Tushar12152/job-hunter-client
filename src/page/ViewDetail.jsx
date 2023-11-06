@@ -1,9 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ViewDetail = () => {
     const job=useLoaderData()
     const{UserName, deadLine,description , photo, postDate, salary, title}=job
-    console.log(job);
+    // console.log(job);
     return (
         <div className="w-[95%] mx-auto mt-10">
              <div className="card lg:card-side bg-base-100 shadow-2xl w-[80%] mx-auto ">
@@ -16,7 +16,9 @@ const ViewDetail = () => {
     <p>Posted Date: {postDate}</p>
     <p>Salary: {salary} Taka</p>
     <div className="card-actions justify-end">
-      <button className="btn bg-gradient-to-r from-red-500 to-blue-500">Apply now</button>
+     <Link to="/apply">
+     <button className="btn bg-gradient-to-r from-red-500 to-blue-500">Apply now</button>
+     </Link>
     </div>
   </div>
 </div>
