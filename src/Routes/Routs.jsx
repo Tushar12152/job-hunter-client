@@ -10,6 +10,7 @@ import ErrorPage from "../page/ErrorPage";
 import AllJobs from "../Components/AllJobs";
 import Blog from "../page/Blog";
 import Apply from "./Apply";
+import MyJobs from "../page/MyJobs";
 
 const Routs =createBrowserRouter([
     {
@@ -56,6 +57,10 @@ const Routs =createBrowserRouter([
                 element:<PrivateRoute>
                          <Apply></Apply>
                         </PrivateRoute>
+            },
+            {
+                path:"/my-jobs",
+                element:<MyJobs></MyJobs>
             }
             
         ]

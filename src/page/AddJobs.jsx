@@ -8,7 +8,8 @@ import swal from "sweetalert";
 const AddJobs = () => {
     const [startDate, setStartDate] = useState(new Date());
     const{user}=useAuth()
-   
+    const email=user?.email
+  
     const [selectedOption, setSelectedOption] = useState('');
 
     const handleSelectChange = (e) => {
@@ -31,7 +32,7 @@ const AddJobs = () => {
         const title=form.title.value;
 
         const job={
-            photo,title,UserName,category,deadLine,salary,description,postDate,applicants
+          email, photo,title,UserName,category,deadLine,salary,description,postDate,applicants
         }
 
         // console.log(job);
