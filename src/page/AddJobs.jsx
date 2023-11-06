@@ -6,7 +6,7 @@ import useAuth from "../Hooks/useAuth";
 import swal from "sweetalert";
 
 const AddJobs = () => {
-    const [startDate, setStartDate] = useState(new Date());
+    onst [startDate, setStartDate] = useState(new Date());
     const{user}=useAuth()
     const email=user?.email
   
@@ -14,7 +14,7 @@ const AddJobs = () => {
 
     const handleSelectChange = (e) => {
       setSelectedOption(e.target.value);
-    };
+    };c
 
 
     const handleSubmit=e=>{
