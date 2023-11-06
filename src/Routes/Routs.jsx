@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import ViewDetail from "../page/ViewDetail";
 import ErrorPage from "../page/ErrorPage";
 import AllJobs from "../Components/AllJobs";
+import Blog from "../page/Blog";
 
 const Routs =createBrowserRouter([
     {
@@ -42,9 +43,12 @@ const Routs =createBrowserRouter([
             },
             {
                 path:'/all-jobs',
-                element:<PrivateRoute>
-                           <AllJobs></AllJobs>
-                         </PrivateRoute>
+                element:<AllJobs></AllJobs>
+                        
+            },
+            {
+                path:"/blog",
+                element:<Blog></Blog>
             }
             
         ]

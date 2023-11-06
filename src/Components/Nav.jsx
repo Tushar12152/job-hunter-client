@@ -41,7 +41,7 @@ const navLink=<div className="flex gap-6">
 
               
 
-              <NavLink to="/blogs" className={({ isActive, isPending }) => isPending ?  "pending" : isActive ? "text-red-600 underline" : ""  }> Blogs</NavLink>
+              <NavLink to="/blog" className={({ isActive, isPending }) => isPending ?  "pending" : isActive ? "text-red-600 underline" : ""  }> Blogs</NavLink>
 
 
               {

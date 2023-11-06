@@ -1,8 +1,16 @@
+import swal from "sweetalert";
 
 const Contact = () => {
+
+    const handleSend=e=>{
+         e.preventDefault()
+         swal("success","Your message is successFully send to Admin panel","success")
+    }
+
+
     return (
         <div>
-              <form>
+              <form onSubmit={handleSend}>
           
 
 
