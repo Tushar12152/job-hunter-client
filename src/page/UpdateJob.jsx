@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import swal from "sweetalert";
 
@@ -8,8 +8,9 @@ import swal from "sweetalert";
 
 const UpdateJob = () => {
 const data=useLoaderData()
-const{ photo,title,UserName,salary,description,applicants}=data
-console.log(data);
+const{_id, photo,title,UserName,salary,description,applicants}=data
+// console.log(data);
+const navigate=useNavigate()
 
 
 
@@ -34,22 +35,23 @@ const handleSubmit=e=>{
     const category=selectedOption;
     const salary=form.salary.value;
     const description=form.description.value;
-    const postDate=form.date.value;
+   
     const deadLine=startDate;
     const applicants=form.applicant.value;
     const title=form.title.value;
 
-    const job={
-      photo,title,UserName,category,deadLine,salary,description,postDate,applicants
+    const update={
+      photo,title,UserName,category,deadLine,salary,description,applicants
     }
 
     // console.log(job);
 
-  axios.up("http://localhost:5002/jobs",job)
+  axios.put(`http://localhost:5002/jobs/${_id}`,update)
   .then(res=>{
-    // console.log(res.data);
-    if(res.data.insertedId){
-        swal('Your Job is Successfully added')
+    console.log(res.data);
+    if(res?.data?.modifiedCount>0){
+        swal('Your Job is updated Successfully')
+        navigate(-1)
     }
   })
   .catch(err=>{

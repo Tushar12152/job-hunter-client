@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const ViewDetail = () => {
     const job=useLoaderData()
-    const{UserName, deadLine,description , photo, postDate, salary, title}=job
+    const{_id,UserName, deadLine,description , photo, postDate, salary, title}=job
     // console.log(job);
     return (
         <div className="w-[95%] mx-auto mt-10">
@@ -16,7 +16,7 @@ const ViewDetail = () => {
     <p>Posted Date: {postDate}</p>
     <p>Salary: {salary} Taka</p>
     <div className="card-actions justify-end">
-     <Link to="/apply">
+     <Link to={`/apply/${_id}`}>
      <button className="btn bg-gradient-to-r from-red-500 to-blue-500">Apply now</button>
      </Link>
     </div>

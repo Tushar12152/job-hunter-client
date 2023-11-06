@@ -12,6 +12,7 @@ import Blog from "../page/Blog";
 import Apply from "./Apply";
 import MyJobs from "../page/MyJobs";
 import UpdateJob from "../page/UpdateJob";
+import AppliedJobs from "../page/AppliedJobs";
 
 const Routs =createBrowserRouter([
     {
@@ -54,10 +55,11 @@ const Routs =createBrowserRouter([
                 element:<Blog></Blog>
             },
             {
-                path:"/apply",
+                path:"/apply/:id",
                 element:<PrivateRoute>
                          <Apply></Apply>
-                        </PrivateRoute>
+                        </PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5002/jobs/${params.id}`)
             },
             {
                 path:"/my-jobs",
@@ -71,6 +73,10 @@ const Routs =createBrowserRouter([
                     <UpdateJob></UpdateJob>
                 </PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5002/jobs/${params.id}`)
+            },
+            {
+                path:"/applied-jobs",
+                element:<AppliedJobs></AppliedJobs>
             }
             
         ]

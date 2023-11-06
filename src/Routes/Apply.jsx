@@ -2,10 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import swal from "sweetalert";
+import { useLoaderData } from "react-router-dom";
 
 const Apply = () => {
 
+const applyedJobs=useLoaderData()
 
+const{ photo, title, UserName, category, deadLine, salary, description, postDate, applicants}=applyedJobs;
+
+// console.log(applyedJobs)
 
 
 
@@ -44,7 +49,7 @@ const Apply = () => {
     const name=form.name.value;
     const email=form.mail.value;
     const resumi=form.resumi.value;
-    const apply={name,email,resumi}
+    const apply={name,email,resumi, photo, title, UserName, category, deadLine, salary, description, postDate, applicants}
 
     // console.log(apply);
 
