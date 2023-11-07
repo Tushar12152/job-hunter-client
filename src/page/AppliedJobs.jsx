@@ -40,17 +40,17 @@ const AppliedJobs = () => {
     }
 
     if (applied) {
-        let filteredApply = applied.filter(job => job.email === usersMail);
+        let filteredApply = applied?.filter(job => job.email === usersMail);
 
         if (selectedOption && selectedOption !== "All") {
-            filteredApply = filteredApply.filter(job => job.category === selectedOption);
+            filteredApply = filteredApply?.filter(job => job.category === selectedOption);
         }
 
         setUsersApply(filteredApply);
     }
   }, [applied, error, usersMail,selectedOption]);
 
-  console.log(selectedOption);
+  // console.log(selectedOption);
 
   return (
    <div className="w-[95%] mx-auto">
@@ -83,7 +83,7 @@ const AppliedJobs = () => {
 
 
       {
-         usersApply.map(apply=><TotalApply
+         usersApply?.map(apply=><TotalApply
             key={apply._id}
             apply={apply}
             ></TotalApply>)

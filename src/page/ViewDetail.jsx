@@ -8,7 +8,7 @@ const ViewDetail = () => {
     const {user}=useAuth()
     const loggedEmail=user?.email;
     // console.log(loggedEmail);
-    console.log(email);
+    // console.log(email);
 
 
     const canApply = loggedEmail !== email;

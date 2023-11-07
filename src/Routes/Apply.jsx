@@ -58,7 +58,7 @@ const{ photo, title, UserName, category, deadLine, salary, description, postDate
     axios.post("https://job-hunter-server-olive.vercel.app/applications",apply)
       .then(res=>{
         // console.log(res.data);
-        if(res.data.insertedId){
+        if(res.data?.insertedId){
             swal('Your Application is Successfully submitted')
         }
 

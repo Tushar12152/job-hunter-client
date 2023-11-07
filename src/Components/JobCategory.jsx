@@ -53,7 +53,7 @@ const JobCategory = () => {
           <h2>All Jobs</h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {
-              jobs.map(job => <Job key={job._id} job={job} />)
+              jobs?.map(job => <Job key={job._id} job={job} />)
             }
           </div>
         </TabPanel>
@@ -61,7 +61,7 @@ const JobCategory = () => {
           <h2>On Site Jobs</h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {
-              onSite.map(job => <Job key={job._id} job={job} />)
+              onSite?.map(job => <Job key={job._id} job={job} />)
             }
           </div>
         </TabPanel>
@@ -69,7 +69,7 @@ const JobCategory = () => {
           <h2>Remote Jobs</h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {
-              remoteJobs.map(job => <Job key={job._id} job={job} />)
+              remoteJobs?.map(job => <Job key={job._id} job={job} />)
             }
           </div>
         </TabPanel>
@@ -77,7 +77,7 @@ const JobCategory = () => {
           <h2>Hybrid Jobs</h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {
-              hybridJobs.map(job => <Job key={job._id} job={job} />)
+              hybridJobs?.map(job => <Job key={job._id} job={job} />)
             }
           </div>
         </TabPanel>
@@ -85,7 +85,7 @@ const JobCategory = () => {
           <h2>Part Time Jobs</h2>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {
-              partTimeJobs.map(job => <Job key={job._id} job={job} />)
+              partTimeJobs?.map(job => <Job key={job._id} job={job} />)
             }
           </div>
         </TabPanel>

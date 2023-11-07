@@ -12,7 +12,7 @@ const MyJobs = () => {
     const userMail = user?.email;
 
     const { data: allJobs, isLoading } = useQuery({
-        queryKey: ['alldata'],
+        queryKey: ['AllData'],
         queryFn: () =>
             fetch('https://job-hunter-server-olive.vercel.app/jobs').then(
                 (res) => res.json(),
@@ -23,24 +23,24 @@ const MyJobs = () => {
 
     useEffect(() => {
         if (allJobs) {
-            const filteredJobs = allJobs.filter(job => job.email === userMail);
+            const filteredJobs = allJobs?.filter(job => job.email === userMail);
             setMyJob(filteredJobs);
         }
     }, [allJobs, userMail]);
 
     if (isLoading) {
-        return <p>Loading...</p>; // Display a loading indicator while data is being fetched
+        return <p>Loading...</p>; 
     }
 
     return (
-        <div className="w-[95%] mx-auto">
+        <div className="w-[95%] mx-auto" >
    <Helmet>
                 <title>Myjob</title>
             </Helmet>
 
-            {myJob.length > 0 ? (
+            {myJob?.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {myJob.map(job => (
+                    {myJob?.map(job => (
                         <Myjob
                             key={job._id}
                             job={job}

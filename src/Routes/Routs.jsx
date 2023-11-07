@@ -72,13 +72,11 @@ const Routs =createBrowserRouter([
                 element:<PrivateRoute>
                     <UpdateJob></UpdateJob>
                 </PrivateRoute>,
-                loader:({params})=>fetch(`https://job-hunter-server-olive.vercel.app/${params.id}`)
+                loader:({params})=>fetch(`https://job-hunter-server-olive.vercel.app/jobs/${params.id}`)
             },
             {
                 path:"/applied-jobs",
-                element:<PrivateRoute>
-                    <AppliedJobs></AppliedJobs>
-                </PrivateRoute>,
+                element:<AppliedJobs></AppliedJobs>
             }
             
         ]

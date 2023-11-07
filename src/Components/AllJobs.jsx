@@ -19,7 +19,7 @@ const AllJobs = () => {
 
     
 
-    const filteredJobs = data && data.filter(job => job.title.toLowerCase().includes(titleSearch.toLowerCase()));
+    const filteredJobs = data && data?.filter(job => job.title.toLowerCase().includes(titleSearch.toLowerCase()));
    
 
     return (

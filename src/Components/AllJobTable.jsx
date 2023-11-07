@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const AllJobTable = ({ job }) => {
     const {_id, UserName, title, postDate, deadLine, salary } = job;
-    console.log(job);
+    // console.log(job);
 
     return (
         <tr className=''>
