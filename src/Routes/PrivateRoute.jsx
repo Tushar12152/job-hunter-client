@@ -1,5 +1,5 @@
 
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { PropTypes } from 'prop-types';
 
@@ -7,6 +7,9 @@ import toast from "react-hot-toast";
 
 const PrivateRoute = ({children}) => {
   const {loading,user}=useAuth()
+const location=useLocation()
+// console.log(location);
+
 
   if(loading){
     return  (
@@ -26,7 +29,7 @@ const PrivateRoute = ({children}) => {
   else{
   
     toast('You have to log in first to view details')
-      return <Navigate to='/login'></Navigate>
+      return <Navigate state={location?.pathname} to='/login'></Navigate>
    
   }
 };

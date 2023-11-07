@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiFillEyeInvisible,AiFillEye } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import swal from "sweetalert";
 import { Helmet } from "react-helmet-async";
@@ -11,12 +11,15 @@ const Login = () => {
    const [showPassword,setShowPassword]=useState(true)
    const{googleSignUp,login}=useAuth()
    const navigate=useNavigate()
+    const location=useLocation()
+    // console.log(location);
+
 
    const popUp=()=>{
       googleSignUp()
       .then(()=>{
          swal('You are successfully signed up')
-         navigate("/")
+         navigate(location?.state ? location.state:"/")
       })
       .catch(err=>{
          swal(err.message)
@@ -32,7 +35,7 @@ const Login = () => {
     login(email,password)
     .then(()=>{
       swal('You are successfully signed up')
-      navigate("/")
+      navigate(location?.state ? location.state:"/")
     })
     .catch(err=>{
       swal(err.message)

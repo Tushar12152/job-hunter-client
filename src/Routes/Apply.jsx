@@ -4,6 +4,7 @@ import axios from "axios";
 import swal from "sweetalert";
 import { useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import emailjs from '@emailjs/browser';
 
 const Apply = () => {
 
@@ -60,6 +61,18 @@ const{ photo, title, UserName, category, deadLine, salary, description, postDate
         if(res.data.insertedId){
             swal('Your Application is Successfully submitted')
         }
+
+
+        emailjs.sendForm('service_j9tg3gl', 'template_og90cpy', form.current, 'Ne7PlQpzjlHbaRdnK')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+
+
+
+
       })
       .catch(err=>{
         swal(err.message)
