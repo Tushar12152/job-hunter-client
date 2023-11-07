@@ -29,7 +29,7 @@ const Myjob = ({job,myJob,setmyJob}) => {
             //   swal("Poof! Your imaginary file has been deleted!", {
             //     icon: "success",
             //   });
-            axios.delete(`http://localhost:5002/jobs/${id}`)
+            axios.delete(`https://job-hunter-server-olive.vercel.app/jobs/${id}`)
             .then(res=>{
                 console.log(res.data);
                 if(res.data.deletedCount>0){

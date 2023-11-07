@@ -12,7 +12,7 @@ const TotalApply = ({apply})=> {
   <div className="card-body">
     <h2 className="card-title">Job Title: {title}</h2>
     <p>Category:{category}</p>
-    <p>user Name:{UserName}</p>
+    <p>Posted by:{UserName}</p>
     <p>email:{email}</p>
     
   </div>

@@ -20,7 +20,7 @@ const{ photo, title, UserName, category, deadLine, salary, description, postDate
     const {data } = useQuery({
         queryKey: ['job'],
         queryFn: () =>
-          fetch('http://localhost:5002/users').then(
+          fetch('https://job-hunter-server-olive.vercel.app/users').then(
             (res) => res.json(),
           ),
       })
@@ -55,7 +55,7 @@ const{ photo, title, UserName, category, deadLine, salary, description, postDate
 
     // console.log(apply);
 
-    axios.post("http://localhost:5002/applications",apply)
+    axios.post("https://job-hunter-server-olive.vercel.app/applications",apply)
       .then(res=>{
         // console.log(res.data);
         if(res.data.insertedId){

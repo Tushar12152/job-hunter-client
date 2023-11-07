@@ -24,7 +24,7 @@ const AppliedJobs = () => {
   const { data: applied, error } = useQuery({
     queryKey: ['appliedJobs'],
     queryFn: () =>
-      fetch('http://localhost:5002/applications')
+      fetch('https://job-hunter-server-olive.vercel.app/applications')
         .then(res => {
           if (!res.ok) {
             throw new Error('Network response was not ok');

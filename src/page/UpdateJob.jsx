@@ -47,7 +47,7 @@ const handleSubmit=e=>{
 
     // console.log(job);
 
-  axios.put(`http://localhost:5002/jobs/${_id}`,update)
+  axios.put(`https://job-hunter-server-olive.vercel.app/jobs/${_id}`,update)
   .then(res=>{
     console.log(res.data);
     if(res?.data?.modifiedCount>0){

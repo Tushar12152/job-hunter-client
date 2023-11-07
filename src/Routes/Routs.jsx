@@ -43,7 +43,7 @@ const Routs =createBrowserRouter([
                 element:<PrivateRoute>
                      <ViewDetail></ViewDetail>
                 </PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5002/jobs/${params.id}`)
+                loader:({params})=>fetch(`https://job-hunter-server-olive.vercel.app/jobs/${params.id}`)
             },
             {
                 path:'/all-jobs',
@@ -59,7 +59,7 @@ const Routs =createBrowserRouter([
                 element:<PrivateRoute>
                          <Apply></Apply>
                         </PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5002/jobs/${params.id}`)
+                loader:({params})=>fetch(`https://job-hunter-server-olive.vercel.app/jobs/${params.id}`)
             },
             {
                 path:"/my-jobs",
@@ -72,7 +72,7 @@ const Routs =createBrowserRouter([
                 element:<PrivateRoute>
                     <UpdateJob></UpdateJob>
                 </PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5002/jobs/${params.id}`)
+                loader:({params})=>fetch(`https://job-hunter-server-olive.vercel.app/jobs/${params.id}`)
             },
             {
                 path:"/applied-jobs",

@@ -14,7 +14,7 @@ const MyJobs = () => {
     const { data: allJobs, isLoading } = useQuery({
         queryKey: ['alldata'],
         queryFn: () =>
-            fetch('http://localhost:5002/jobs').then(
+            fetch('https://job-hunter-server-olive.vercel.app/jobs').then(
                 (res) => res.json(),
             ),
     });

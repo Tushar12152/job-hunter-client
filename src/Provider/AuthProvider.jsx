@@ -44,14 +44,14 @@ useEffect(()=>{
            //if user exist then isue a token
         //    if(currentUser){
           
-        //     axios.post("http://localhost:5002/jwt",loggedUser,{withCredentials:true})
+        //     axios.post("https://job-hunter-server-olive.vercel.app/jwt",loggedUser,{withCredentials:true})
         //     .then(res=>{
         //         console.log(res.data );
         //     })
         //    }
 
         //    else{
-        //          axios.post("http://localhost:5002/logout",loggedUser,{
+        //          axios.post("https://job-hunter-server-olive.vercel.app/logout",loggedUser,{
         //             withCredentials:true
         //          })
         //          .then(res=>{

@@ -26,7 +26,7 @@ const Register = () => {
         
       
 
-        axios.post('http://localhost:5002/users',user)
+        axios.post('https://job-hunter-server-olive.vercel.app/users',user)
         .then(res=>{
           // console.log(res.data);
           if(res.data.insertedId){

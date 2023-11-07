@@ -8,7 +8,7 @@ const Nav = () => {
   const {data } = useQuery({
     queryKey: ['Data'],
     queryFn: () =>
-      fetch('http://localhost:5002/users').then(
+      fetch('https://job-hunter-server-olive.vercel.app/users').then(
         (res) => res.json(),
       ),
   })

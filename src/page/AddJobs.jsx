@@ -46,7 +46,7 @@ const AddJobs = () => {
     };
 
     axios
-      .post("http://localhost:5002/jobs", job)
+      .post("https://job-hunter-server-olive.vercel.app/jobs", job)
       .then((res) => {
         if (res.data.insertedId) {
           swal('Your Job is Successfully added');
