@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../Hooks/useAuth";
 import { useEffect, useState, } from "react";
 import TotalApply from "../Components/TotalApply";
+import { Helmet } from "react-helmet-async";
 
 const AppliedJobs = () => {
 
@@ -53,6 +54,9 @@ const AppliedJobs = () => {
 
   return (
    <div className="w-[95%] mx-auto">
+    <Helmet>
+                <title>Applied-Jobs</title>
+            </Helmet>
 
 <div className="mb-10">
 

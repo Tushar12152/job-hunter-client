@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import swal from "sweetalert";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -46,6 +47,9 @@ const Register = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+          <Helmet>
+                <title>Register</title>
+            </Helmet>
         <div className="hero-content flex-col lg:flex-row items-center lg:gap-72 ">
 
           <div className="text-center lg:text-left">

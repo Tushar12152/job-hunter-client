@@ -1,7 +1,11 @@
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
     return (
         <div className="w-[95%] mx-auto flex flex-col gap-6">
+          <Helmet>
+                <title>Blogs</title>
+            </Helmet>
               <div className="collapse collapse-arrow bg-base-300 ">
   <input type="radio" name="my-accordion-2" checked="checked" /> 
   <div className="collapse-title text-xl font-medium">

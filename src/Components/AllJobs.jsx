@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import Job from "./job";
+import { Helmet } from "react-helmet-async";
 
 const AllJobs = () => {
     const { data } = useQuery({
@@ -22,6 +23,9 @@ const AllJobs = () => {
 
     return (
        <div>
+        <Helmet>
+                <title>All-Jobs</title>
+            </Helmet>
            <form >
                <div className="flex items-center justify-center gap-2 py-5">
                    <div className="form-control w-[50%] flex items-center justify-center">

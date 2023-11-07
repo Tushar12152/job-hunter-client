@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../Hooks/useAuth";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 const AddJobs = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -58,6 +59,9 @@ const AddJobs = () => {
 
   return (
     <div className="w-[95%] mx-auto">
+      <Helmet>
+                <title>Add-job</title>
+            </Helmet>
       <div>
         <form onSubmit={handleSubmit}>
           <div className="flex w-full gap-2">

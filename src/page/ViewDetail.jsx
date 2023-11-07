@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const ViewDetail = () => {
     const job=useLoaderData()
@@ -15,6 +16,9 @@ const ViewDetail = () => {
 
     return (
         <div className="w-[95%] mx-auto mt-10">
+            <Helmet>
+                <title>View-Details</title>
+            </Helmet>
              <div className="card lg:card-side bg-base-100 shadow-2xl w-[80%] mx-auto ">
   <figure className="lg:w-[50%]"><img className="w-full p-5" src={photo} alt="Album"/></figure>
   <div className="card-body lg:w-[50%]">

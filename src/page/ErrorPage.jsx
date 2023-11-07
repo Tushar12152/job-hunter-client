@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
     return (
        <div className="w-[50%] mx-auto ">
+        <Helmet>
+                <title>Error</title>
+            </Helmet>
          <div >
 <img className="w-full" src={'https://i.ibb.co/LRzbLRV/images.jpg'} alt="" />
 

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -62,6 +63,9 @@ const handleSubmit=e=>{
 
     return (
         <div className="w-[95%] mx-auto">
+            <Helmet>
+                <title>Update</title>
+            </Helmet>
         <div>
           <form onSubmit={handleSubmit}>
             <div className="flex w-full   gap-2">

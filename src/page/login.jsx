@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -43,6 +44,9 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+          <Helmet>
+                <title>Log in</title>
+            </Helmet>
         <div className="hero-content flex-col lg:flex-row items-center lg:gap-72 ">
 
           <div className="text-center lg:text-left">

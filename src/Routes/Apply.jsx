@@ -3,6 +3,7 @@ import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import swal from "sweetalert";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Apply = () => {
 
@@ -70,6 +71,9 @@ const{ photo, title, UserName, category, deadLine, salary, description, postDate
 
     return (
         <div className="w-[95%] mx-auto">
+          <Helmet>
+                <title>Apply</title>
+            </Helmet>
             <form onSubmit={handleApplication}>
 
             <div className="flex w-full   gap-2">
