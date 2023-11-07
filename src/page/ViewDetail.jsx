@@ -7,7 +7,7 @@ const ViewDetail = () => {
     const{_id,UserName,email, deadLine,description , photo, postDate, salary, title}=job;
     const {user}=useAuth()
     const loggedEmail=user?.email;
-    console.log(loggedEmail);
+    // console.log(loggedEmail);
     console.log(email);
 
 
