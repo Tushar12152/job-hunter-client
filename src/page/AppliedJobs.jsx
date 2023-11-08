@@ -4,7 +4,17 @@ import { useEffect, useState, } from "react";
 import TotalApply from "../Components/TotalApply";
 import { Helmet } from "react-helmet-async";
 
+
+
 const AppliedJobs = () => {
+
+
+
+ 
+
+
+
+
 
 
     const [selectedOption, setSelectedOption] = useState('');
@@ -57,6 +67,11 @@ const AppliedJobs = () => {
     <Helmet>
                 <title>Applied-Jobs</title>
             </Helmet>
+
+
+
+            
+
 
 <div className="mb-10">
 
