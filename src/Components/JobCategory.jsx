@@ -1,12 +1,13 @@
 
 
 
-
+// import { motion } from "framer-motion"
 import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Job from './job';
+
 
 const JobCategory = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -36,6 +37,9 @@ const JobCategory = () => {
     setActiveTab(index);
   };
 
+
+ 
+
   return (
     <div>
       <h1 className='bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent text-2xl lg:text-5xl font-semibold lg:font-bold text-center pt-20 pb-10'>Job By Category</h1>
@@ -51,7 +55,7 @@ const JobCategory = () => {
 
         <TabPanel>
           <h2>All Jobs</h2>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {
               jobs?.map(job => <Job key={job._id} job={job} />)
             }

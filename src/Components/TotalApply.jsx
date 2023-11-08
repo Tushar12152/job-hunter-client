@@ -25,7 +25,7 @@ const TotalApply = ({apply,setUsersApply,usersApply})=> {
           //   swal("Poof! Your imaginary file has been deleted!", {
           //     icon: "success",
           //   });
-          axios.delete(`http://localhost:5002/applications/${id}`)
+          axios.delete(`https://job-hunter-server-olive.vercel.app/applications/${id}`)
           .then(res=>{
               console.log(res.data);
               if(res.data.deletedCount>0){

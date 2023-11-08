@@ -3,6 +3,9 @@ import { useQuery } from '@tanstack/react-query';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+
+
+
 const Job = ({job}) => {
     const{ _id,category, deadLine, photo, postDate, salary, title}=job
 
@@ -24,12 +27,13 @@ const Job = ({job}) => {
     const totalApplicants= applications?.filter(applicant=>applicant.title.toLowerCase()===title.toLowerCase())
     // console.log(totalApplicants?.length);
 
+   
 
 
 
     return (
-        <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+      
+          <div  className="card w-96 bg-base-100 shadow-xl">
   <figure><img className='h-[300px] object-cover p-5 w-full' src={photo} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
@@ -44,8 +48,11 @@ const Job = ({job}) => {
      </Link>
     </div>
   </div>
-</div>
         </div>
+       
+   
+       
+        
     );
 };
 

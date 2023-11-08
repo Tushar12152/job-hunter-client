@@ -1,8 +1,15 @@
 
+import { motion } from 'framer-motion';
+
 const AboutUs = () => {
     return (
-        <div className="mt-10">
-            <div className="lg:flex flex-row-reverse   shadow-2xl shadow-black">
+        <div  className="mt-10">
+            <motion.div   whileHover={{ scale:1, rotate: 360 }}
+        whileTap={{
+          scale:.2,
+          rotate: 360,
+          borderRadius: "100%"
+        }} className="lg:flex flex-row-reverse   shadow-2xl shadow-black">
                     <div className="lg:w-[50%] p-5"> 
                          <h1 className="text-gray-500 font-semibold text-xl ">Martin Schneider</h1>
                          <p className="text-black">Martin R. Schneider is a certified Human Resources specialist and Organizational Development practitioner with nearly a decade of experience in career services and people operations. Using his talent management and organizational experience, he helps clients define their goals, target opportunities, and execute effective career transition strategies. Through hands-on coaching, informative training, and creative tools, he guides career-changers through the entire job hunt process.
@@ -11,10 +18,15 @@ const AboutUs = () => {
                     <div className="lg:w-[50%] p-7">
                         <img className="border-4 border-green-600 rounded-full" src={'https://i.ibb.co/jMFqm83/Marty.webp'} alt="" />
                     </div>
-            </div>   
+            </motion.div>   
 
 
-            <div className="lg:flex flex-row-reverse mt-10  shadow-2xl shadow-black">
+            <motion.div   whileHover={{ scale:1, rotate: 360 }}
+        whileTap={{
+          scale:.2,
+          rotate: 360,
+          borderRadius: "100%"
+        }}  className="lg:flex flex-row-reverse mt-10  shadow-2xl shadow-black">
 
 
             <div className="lg:w-[50%] p-7 flex justify-end">
@@ -30,10 +42,15 @@ const AboutUs = () => {
                          </p>
                     </div> 
                     
-            </div>
+            </motion.div>
 
 
-            <div className="lg:flex flex-row-reverse mt-10  shadow-2xl shadow-black">
+            <motion.div    whileHover={{ scale:1, rotate: 360 }}
+        whileTap={{
+          scale:.2,
+          rotate: 360,
+          borderRadius: "100%"
+        }} className="lg:flex flex-row-reverse mt-10  shadow-2xl shadow-black">
                     <div className="lg:w-[50%] p-5"> 
                          <h1 className="text-gray-500 font-semibold text-xl ">Frank Hackett
 </h1>
@@ -45,7 +62,7 @@ const AboutUs = () => {
                     <div className="lg:w-[50%] p-7">
                         <img className="border-4 border-green-600 rounded-full" src={'https://i.ibb.co/0Z02kjf/Frank.webp'} alt="" />
                     </div>
-            </div>  
+            </motion.div>  
         </div>
     );
 };

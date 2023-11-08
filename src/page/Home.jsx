@@ -3,11 +3,14 @@ import AboutUs from "../Components/AboutUs";
 import Banner from "../Components/Banner";
 import Contact from "../Components/Contact";
 
+
 import JobCategory from "../Components/JobCategory";
 
 const Home = () => {
     return (
-        <div className="w-[95%] mx-auto">
+        <div 
+        
+        className="w-[95%] mx-auto">
 
             <Helmet>
                 <title>Find Job | Home</title>
