@@ -1,9 +1,32 @@
 
+import { useQuery } from '@tanstack/react-query';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Job = ({job}) => {
-    const{ _id,applicants,category, deadLine, photo, postDate, salary, title}=job
+    const{ _id,category, deadLine, photo, postDate, salary, title}=job
+
+    // console.log(title);
+
+
+
+    const { data:applications } = useQuery({
+      queryKey: ['applications'],
+      queryFn: () =>
+        fetch('https://job-hunter-server-olive.vercel.app/applications/').then(
+          (res) => res.json(),
+        ),
+    });
+
+
+    // console.log(applications);
+
+    const totalApplicants= applications?.filter(applicant=>applicant.title.toLowerCase()===title.toLowerCase())
+    // console.log(totalApplicants?.length);
+
+
+
+
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
@@ -14,7 +37,7 @@ const Job = ({job}) => {
     <p>Deadline : {deadLine}</p>
     <p>Category:{category}</p>
     <p>Salary : {salary} Taka</p>
-    <p>Applicant : {applicants}</p>
+    <p>Applicant : {totalApplicants?.length}</p>
     <div className="card-actions justify-end">
      <Link to={`/detail/${_id}`}>
      <button  className="btn bg-gradient-to-r from-red-500 to-blue-500">View Detail</button>
