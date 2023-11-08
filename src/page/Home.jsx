@@ -10,7 +10,7 @@ const Home = () => {
         <div className="w-[95%] mx-auto">
 
             <Helmet>
-                <title>Home</title>
+                <title>Find Job | Home</title>
             </Helmet>
             <Banner></Banner>
             <JobCategory></JobCategory>

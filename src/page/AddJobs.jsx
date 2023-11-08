@@ -60,7 +60,7 @@ const AddJobs = () => {
   return (
     <div className="w-[95%] mx-auto">
       <Helmet>
-                <title>Add-job</title>
+                <title>Find Job | Add-job</title>
             </Helmet>
       <div>
         <form onSubmit={handleSubmit}>

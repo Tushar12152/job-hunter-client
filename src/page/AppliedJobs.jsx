@@ -62,10 +62,12 @@ const AppliedJobs = () => {
 
   // console.log(selectedOption);
 
+ 
+
   return (
    <div className="w-[95%] mx-auto">
     <Helmet>
-                <title>Applied-Jobs</title>
+                <title>Find Job | Applied-Jobs</title>
             </Helmet>
 
 
@@ -100,6 +102,8 @@ const AppliedJobs = () => {
       {
          usersApply?.map(apply=><TotalApply
             key={apply._id}
+            setUsersApply={setUsersApply}
+            usersApply={usersApply}
             apply={apply}
             ></TotalApply>)
       }

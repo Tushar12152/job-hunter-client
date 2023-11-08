@@ -35,7 +35,7 @@ const MyJobs = () => {
     return (
         <div className="w-[95%] mx-auto" >
    <Helmet>
-                <title>Myjob</title>
+                <title>Find Job | Myjob</title>
             </Helmet>
 
             {myJob?.length > 0 ? (

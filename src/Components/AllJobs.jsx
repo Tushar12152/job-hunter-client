@@ -25,7 +25,7 @@ const AllJobs = () => {
     return (
        <div>
         <Helmet>
-                <title>All-Jobs</title>
+                <title>Find Job | All-Jobs</title>
             </Helmet>
            <form >
                <div className="flex items-center justify-center gap-2 py-5 w-[95%] mx-auto">

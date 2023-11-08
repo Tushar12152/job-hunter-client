@@ -48,7 +48,7 @@ const Login = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
           <Helmet>
-                <title>Log in</title>
+                <title>Find Job | Log in</title>
             </Helmet>
         <div className="hero-content flex-col lg:flex-row items-center lg:gap-72 ">
 

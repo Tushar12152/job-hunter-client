@@ -85,7 +85,7 @@ const{ photo, title, UserName, category, deadLine, salary, description, postDate
     return (
         <div className="w-[95%] mx-auto">
           <Helmet>
-                <title>Apply</title>
+                <title>Find Job | Apply</title>
             </Helmet>
             <form onSubmit={handleApplication}>
 

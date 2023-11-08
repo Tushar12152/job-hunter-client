@@ -64,7 +64,7 @@ const handleSubmit=e=>{
     return (
         <div className="w-[95%] mx-auto">
             <Helmet>
-                <title>Update</title>
+                <title>Find Job | Update</title>
             </Helmet>
         <div>
           <form onSubmit={handleSubmit}>
