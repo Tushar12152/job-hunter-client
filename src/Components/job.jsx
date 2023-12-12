@@ -33,7 +33,10 @@ const Job = ({job}) => {
 
     return (
       
-          <div  className="card w-96 bg-base-100 shadow-xl">
+          <div 
+          data-aos="zoom-in-up"
+          data-aos-duration="3000"
+          className="card w-96 bg-base-100 shadow-xl">
   <figure><img className='h-[300px] object-cover p-5 w-full' src={photo} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{title}</h2>

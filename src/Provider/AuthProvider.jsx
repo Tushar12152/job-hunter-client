@@ -2,7 +2,8 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged,
 import {PropTypes } from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Config/Firebase.config";
-// import axios from "axios";
+import axios from "axios";
+
 
 export const AuthContext=createContext(null)
 
@@ -38,26 +39,35 @@ useEffect(()=>{
            setUser(currentUser)
            setLoading(false)
 
-              //    const userEmail=currentUser?.email||user?.email;
-            //  const loggedUser={email:userEmail}
 
-           //if user exist then isue a token
-        //    if(currentUser){
+
+           
+
+         const userEmail=currentUser?.email||user?.email;
+         const loggedUser={email:userEmail}
+
+        //    if user exist then isue a token
+         if(currentUser){
           
-        //     axios.post("https://job-hunter-server-olive.vercel.app/jwt",loggedUser,{withCredentials:true})
-        //     .then(res=>{
-        //         console.log(res.data );
-        //     })
-        //    }
+         axios.post("http://localhost:5002/jwt",loggedUser,{withCredentials:true})
+         .then(res=>{
+            console.log(res.data );
+         })
+          }
 
-        //    else{
-        //          axios.post("https://job-hunter-server-olive.vercel.app/logout",loggedUser,{
-        //             withCredentials:true
-        //          })
-        //          .then(res=>{
-        //             console.log(res.data);
-        //          })
-        //    }
+        else{
+              axios.post("http://localhost:5002/logout",loggedUser,{
+                  withCredentials:true
+              })
+               .then(res=>{
+                   console.log(res.data);
+                })
+         }
+
+
+
+
+
     })
 
     return ()=>{
